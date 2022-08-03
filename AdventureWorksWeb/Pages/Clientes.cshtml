@@ -1,0 +1,50 @@
+﻿@page
+@using AdventureWorksNS.Data
+@model AdventureWorksWeb.Pages.ClientesModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+
+
+
+    <h1 class="display-2">Clientes</h1>
+     <p>Por favor ingrese un nuevo cliente</p>
+    <div class="row">
+       
+        <form method="POST">
+            <div>
+                <div><input asp-for="Cliente.CompanyName" placeholder="Company Name" /></div>
+                <div><input asp-for="Cliente.Title" placeholder="Titulo" /></div>
+                <div><input asp-for="Cliente.FirstName" placeholder="Nombres" /></div>
+                <div><input asp-for="Cliente.LastName" placeholder="Apellidos" /></div>
+                <div><input type="submit" /></div>
+            </div>
+        </form>
+    
+
+
+<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Apellidos</th>
+            <th>Nombres</th>
+            <th>Compañía</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Clientes is not null)
+        {
+            @foreach(Customer c in Model.Clientes)
+            {
+                <tr>
+                    <td>@c.LastName</td>
+                    <td>@c.FirstName</td>
+                    <td>@c.CompanyName</td>
+                </tr>
+            }
+        }
+    </tbody>
+    
+</table>
+
+</div>

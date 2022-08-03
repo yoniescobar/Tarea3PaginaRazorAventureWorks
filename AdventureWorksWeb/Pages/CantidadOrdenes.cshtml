@@ -1,0 +1,14 @@
+﻿@page
+@using AdventureWorksNS.Data
+@inject AdventureWorksDB db
+@{
+    string title = "Cantidad Ordenes";
+    ViewData["Title"] = $"AdventureWorks - {title}";
+}
+
+<div class="row">
+    <h1 class="display-2">@title</h1>
+    <p>
+        La cantidad de ordenes al momento es: <b>@db.SalesOrderHeaders.Count()</b>
+    </p>
+</div>

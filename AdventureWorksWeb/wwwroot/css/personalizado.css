@@ -1,0 +1,9 @@
+﻿.dropdown-item:hover {
+    background: green;
+}
+
+.fondoNavbar{
+   margin:0 !important;
+   padding:0 !important;
+}
+

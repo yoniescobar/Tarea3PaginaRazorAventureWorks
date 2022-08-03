@@ -1,0 +1,17 @@
+﻿@page
+@using AdventureWorksNS.Data
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model AWFeatures.Pages.ProductosModel
+
+
+<div class="row">
+    <h1 class="display-2">Productos</h1>
+    <div class="row">
+        @foreach (Product producto in Model.Productos)
+        {
+            <div class="col-sm-3">
+                <partial name="_Producto" model="producto" />
+            </div>
+        }
+    </div>
+</div>
